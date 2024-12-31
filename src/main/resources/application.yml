@@ -1,2 +1,11 @@
 server:
   port: 8090
+spring:
+  thymeleaf:
+    cache: false
+    prefix: C:\Users\enter\IdeaProjects\chat\src\main\resources
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
