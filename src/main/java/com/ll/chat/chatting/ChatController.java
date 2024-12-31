@@ -1,5 +1,6 @@
 package com.ll.chat.chatting;
 
+import com.ll.chat.chatting.DTO.WriteMessageResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,13 +16,13 @@ public class ChatController {
 
     @PostMapping("/writeMessage")
     @ResponseBody
-    public RsData writeMessage() {
-        ChatMessage ch1 = new ChatMessage(1, "홍길동", "안녕하세요.");;
+    public RsData<WriteMessageResponse> writeMessage() {
+        ChatMessage ch1 = new ChatMessage("홍길동", "안녕하세요.");;
         chatMessages.add(ch1);
 
-        ChatMessage ch2 = new ChatMessage(2, "이순신", "안녕하세요.");
+        ChatMessage ch2 = new ChatMessage("이순신", "안녕하세요.");
         chatMessages.add(ch2);
 
-        return new RsData("200", "메세지가 성공적으로 작성되었습니다.", chatMessages);
+        return new RsData("200", "메세지가 성공적으로 작성되었습니다.", new WriteMessageResponse(chatMessages));
     }
 }
