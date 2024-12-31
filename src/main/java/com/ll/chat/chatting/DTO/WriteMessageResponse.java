@@ -4,11 +4,10 @@ import com.ll.chat.chatting.ChatMessage;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.util.List;
-
 @AllArgsConstructor
 @Getter
 public class WriteMessageResponse {
-    private List<ChatMessage> chatMessages;
-
+    //private List<ChatMessage> chatMessages;
+    private ChatMessage chatMessage;
+    private int totalCount;
 }

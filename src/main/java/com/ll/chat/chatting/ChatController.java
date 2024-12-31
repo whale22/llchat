@@ -21,12 +21,12 @@ public class ChatController {
         ChatMessage cm = new ChatMessage(writeMessageRequest.getAuthorName(), writeMessageRequest.getContent());
         chatMessages.add(cm);
 
-        return new RsData("200", "메세지가 성공적으로 작성되었습니다.", new WriteMessageResponse(chatMessages));
+        return new RsData("200", "메세지가 성공적으로 작성되었습니다.", new WriteMessageResponse(cm, chatMessages.size()));
     }
 
     @GetMapping("/messages")
     @ResponseBody
     public RsData<List<ChatMessage>> messages() {
-        return new RsData("200","메세지가 성공적으로 로드되었습니다.", new MessagesResponse(chatMessages));
+        return new RsData("200","메세지가 성공적으로 로드되었습니다.", new MessagesResponse(chatMessages, chatMessages.size()));
     }
 }

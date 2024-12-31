@@ -10,4 +10,5 @@ import java.util.List;
 @Getter
 public class MessagesResponse {
     List<ChatMessage> chatMessages;
+    private int totalCount;
 }
